@@ -1,25 +1,38 @@
-import logo from './assets/logo.png'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
+import PlayerBar from './components/PlayerBar'
+import LikedSongs from './pages/LikedSongs'
+import GenrePlaylists from './pages/GenrePlaylists'
+import PlaylistDetail from './pages/PlaylistDetail'
+import MyPage from './pages/MyPage'
+import Login from './pages/Login'
+import Playlist from './pages/Playlist'
+import Search from './pages/Search'
 
 function App() {
   return (
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh',
-      backgroundColor: '#ffffff'
-    }}>
-      <a href="https://bvelostudio.com/" target="_blank" rel="noreferrer">
-        <img
-          src={logo}
-          alt="Bvelo Studio"
-          style={{
-            width: '200px',
-            cursor: 'pointer'
-          }}
-        />
-      </a>
-    </div>
+    <BrowserRouter>
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', background: '#111', color: '#fff' }}>
+        <Navbar />
+        <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
+          <Sidebar />
+          <div style={{ flex: 1, overflow: 'auto', padding: '20px' }}>
+            <Routes>
+              <Route path="/liked" element={<LikedSongs />} />
+              <Route path="/playlist" element={<Playlist />} />
+              <Route path="/playlist/:id" element={<PlaylistDetail />} />
+              <Route path="/playlist/auto/:name" element={<PlaylistDetail />} />
+              <Route path="/playlist/manual/:name" element={<PlaylistDetail />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/mypage" element={<MyPage />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </div>
+        </div>
+        <PlayerBar />
+      </div>
+    </BrowserRouter>
   )
 }
 
