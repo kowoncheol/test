@@ -9,6 +9,7 @@ import MyPage from './pages/MyPage'
 import Login from './pages/Login'
 import Playlist from './pages/Playlist'
 import Search from './pages/Search'
+import Home from './pages/Home'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Sidebar />
           <div style={{ flex: 1, overflow: 'auto', padding: '20px' }}>
             <Routes>
+              <Route path="/" element={<Home />} />
               <Route path="/liked" element={<LikedSongs />} />
               <Route path="/playlist" element={<Playlist />} />
               <Route path="/playlist/:id" element={<PlaylistDetail />} />
