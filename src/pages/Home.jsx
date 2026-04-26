@@ -28,31 +28,19 @@ function Home() {
           Spotify 좋아요 곡을 장르별로 자동 분류하고<br />
           나만의 플레이리스트를 만들어보세요
         </div>
-        <div style={{ display: 'flex', gap: '10px' }}>
-          <button
-            onClick={() => navigate('/login')}
-            style={{
-              background: '#1DB954', border: 'none', borderRadius: '30px',
-              color: '#000', fontSize: '14px', fontWeight: '500',
-              padding: '12px 28px', cursor: 'pointer'
-            }}>
-            Google로 시작하기
-          </button>
-          <button
-            onClick={() => navigate('/liked')}
-            style={{
-              background: 'none', border: '0.5px solid #555', borderRadius: '30px',
-              color: '#fff', fontSize: '14px', padding: '12px 28px', cursor: 'pointer'
-            }}>
-            둘러보기
-          </button>
-        </div>
+        <button
+          onClick={() => navigate('/login')}
+          style={{
+            background: '#1DB954', border: 'none', borderRadius: '30px',
+            color: '#000', fontSize: '14px', fontWeight: '500',
+            padding: '12px 28px', cursor: 'pointer'
+          }}>
+          Google로 시작하기
+        </button>
       </div>
 
       <div style={{ marginBottom: '32px' }}>
-        <div style={{ fontSize: '11px', color: '#1DB954', letterSpacing: '1px', marginBottom: '8px' }}>
-          CORE VALUES
-        </div>
+        <div style={{ fontSize: '11px', color: '#1DB954', letterSpacing: '1px', marginBottom: '8px' }}>CORE VALUES</div>
         <div style={{ fontSize: '18px', fontWeight: '500', marginBottom: '16px' }}>핵심 가치</div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
           {[
@@ -62,7 +50,7 @@ function Home() {
           ].map(item => (
             <div key={item.title} style={{
               background: '#1a1a1a', border: '0.5px solid #333',
-              borderRadius: '12px', padding: '20px'
+              borderRadius: '12px', padding: '20px', textAlign: 'center'
             }}>
               <div style={{ fontSize: '24px', marginBottom: '10px' }}>{item.icon}</div>
               <div style={{ fontSize: '14px', fontWeight: '500', marginBottom: '6px' }}>{item.title}</div>
@@ -73,9 +61,7 @@ function Home() {
       </div>
 
       <div>
-        <div style={{ fontSize: '11px', color: '#1DB954', letterSpacing: '1px', marginBottom: '8px' }}>
-          PREVIEW
-        </div>
+        <div style={{ fontSize: '11px', color: '#1DB954', letterSpacing: '1px', marginBottom: '8px' }}>PREVIEW</div>
         <div style={{ fontSize: '18px', fontWeight: '500', marginBottom: '16px' }}>플레이리스트 미리보기</div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
           {previews.map(p => (
@@ -90,8 +76,7 @@ function Home() {
             >
               <div style={{
                 height: '80px', background: p.color, opacity: 0.3,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '28px'
+                display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '28px'
               }}>♪</div>
               <div style={{ padding: '10px' }}>
                 <div style={{ fontSize: '13px', fontWeight: '500', marginBottom: '4px' }}>{p.name}</div>
