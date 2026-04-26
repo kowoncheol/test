@@ -3,13 +3,6 @@ import { useNavigate } from 'react-router-dom'
 function Home() {
   const navigate = useNavigate()
 
-  const genres = [
-    { name: 'K-Pop', count: 32, color: '#1a3a2a' },
-    { name: 'Indie Pop', count: 18, color: '#1a1a3a' },
-    { name: 'Jazz', count: 11, color: '#3a1a2a' },
-    { name: 'R&B', count: 14, color: '#2a1a3a' },
-  ]
-
   const previews = [
     { name: 'K-Pop 베스트', count: 32, color: '#1DB954' },
     { name: 'Chill Vibes', count: 18, color: '#a78bfa' },
@@ -74,29 +67,6 @@ function Home() {
               <div style={{ fontSize: '24px', marginBottom: '10px' }}>{item.icon}</div>
               <div style={{ fontSize: '14px', fontWeight: '500', marginBottom: '6px' }}>{item.title}</div>
               <div style={{ fontSize: '12px', color: '#aaa', lineHeight: 1.6 }}>{item.desc}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div style={{ marginBottom: '32px' }}>
-        <div style={{ fontSize: '11px', color: '#1DB954', letterSpacing: '1px', marginBottom: '8px' }}>
-          GENRE BASED
-        </div>
-        <div style={{ fontSize: '18px', fontWeight: '500', marginBottom: '16px' }}>선호 장르 기반 추천</div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px' }}>
-          {genres.map(genre => (
-            <div key={genre.name}
-              onClick={() => navigate('/playlist')}
-              style={{
-                background: genre.color, border: '0.5px solid #333',
-                borderRadius: '10px', padding: '16px', cursor: 'pointer'
-              }}
-              onMouseEnter={e => e.currentTarget.style.opacity = '0.8'}
-              onMouseLeave={e => e.currentTarget.style.opacity = '1'}
-            >
-              <div style={{ fontSize: '14px', fontWeight: '500', marginBottom: '4px' }}>{genre.name}</div>
-              <div style={{ fontSize: '11px', color: '#aaa' }}>{genre.count}곡</div>
             </div>
           ))}
         </div>
