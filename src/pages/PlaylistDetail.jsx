@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 function PlaylistDetail() {
-  const isAuto = window.location.pathname.includes('/auto/')
-  const name = window.location.pathname.split('/').pop()
+  const { type, name } = useParams()
+  const isAuto = type === 'auto'
 
   const [songs, setSongs] = useState([
     { id: 1, title: "Dynamite", artist: "BTS", album: "Dynamite", duration: "3:19" },
